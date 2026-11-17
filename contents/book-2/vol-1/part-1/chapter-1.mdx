@@ -1,0 +1,32 @@
+---
+title: "Boundaries, Latency, and Little's Law"
+description: "Use Little's Law to reason about concurrency limits, queue depth, and tail latency before incidents occur."
+order: 1
+---
+
+When a downstream dependency slows from 20 milliseconds to 400 milliseconds, upstream thread pools or connection pools fill up far faster than intuition predicts.
+
+### Little's Law in Practice
+
+`L = λ × W` states that the average number of items in a system (`L`) equals the arrival rate (`λ`) multiplied by the average time each item spends in the system (`W`).
+
+- If requests arrive at `200 req/s` and take `0.05s`, average concurrency is `10`.
+- If latency spikes to `2.0s`, concurrency jumps to `400`—exhausting a `100`-connection pool in under a second.
+
+```typescript
+// Bounded concurrency prevents unbounded queue growth
+export async function withTimeout<T>(
+  promise: Promise<T>,
+  timeoutMs: number
+): Promise<T> {
+  let timer: ReturnType<typeof setTimeout>;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error("Upstream timeout")), timeoutMs);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+}
+```
+
+### Enforcing Explicit Budgets
+
+Every network boundary needs three explicit numbers: a connection timeout, a request deadline, and a bounded retry budget with jitter.

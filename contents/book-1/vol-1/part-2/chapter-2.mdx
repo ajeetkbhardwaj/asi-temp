@@ -1,0 +1,27 @@
+---
+title: "Code as Character"
+description: "Design code examples that illuminate a single concept clearly and reward experimentation."
+order: 2
+---
+
+In great technical books, code examples are not static screenshots of production files—they are characters driving the explanation forward.
+
+### Isolate the Lesson
+
+Production code handles logging, metrics, retries, and edge-case validation all at once. Teaching code should strip away everything unrelated to the current idea, while noting explicitly what was omitted for clarity.
+
+```typescript
+// Focused teaching snippet: highlights retry backoff without logger noise
+async function fetchWithBackoff(url: string, attempts = 3): Promise<Response> {
+  for (let i = 0; i < attempts; i++) {
+    const res = await fetch(url);
+    if (res.ok) return res;
+    await new Promise((r) => setTimeout(r, 2 ** i * 250));
+  }
+  throw new Error(`Request failed after ${attempts} attempts`);
+}
+```
+
+### Use Realistic Domain Names
+
+Replace `foo`, `bar`, and `baz` with concrete nouns (`invoice`, `retryCount`, `sessionToken`). Meaningful identifiers eliminate an extra layer of mental translation for the reader.

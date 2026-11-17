@@ -1,0 +1,14 @@
+---
+title: "Designing for Graceful Degradation"
+description: "Protect core user workflows when non-critical dependencies slow down or become unavailable."
+order: 2
+---
+
+A system that collapses completely when its recommendation feed or analytics pipeline slows down has failed to separate critical paths from optional enrichments.
+
+### Separating Critical from Optional Paths
+
+1. **Core Path**: Authentication, checkout/order commit, and primary data retrieval.
+2. **Enhancement Path**: Personalization, secondary counts, and background notifications.
+
+Use circuit breakers and cached fallbacks on enhancement paths so core functionality remains responsive even during partial infrastructure degradation.

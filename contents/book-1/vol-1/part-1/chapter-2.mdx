@@ -1,0 +1,78 @@
+---
+title: "Understanding Your Reader's Journey"
+description: "Apply cognitive science principles to technical documentation and design content that works with human memory."
+order: 2
+---
+
+When someone opens your documentation, they start a mental journey that transforms confusion into understanding. Research from [cognitive psychology](https://en.wikipedia.org/wiki/Cognitive_psychology) shows that technical learning follows predictable patterns. Understanding these patterns lets you design documentation that works with human cognition instead of fighting it.
+
+Your reader's brain has specific limitations and strengths. Their [working memory](https://www.simplypsychology.org/short-term-memory.html) can only handle about 7 items simultaneously. Their emotional state affects comprehension. Their prior knowledge shapes everything they understand.
+
+### How Programmers Actually Learn
+
+Programmers learn through **trial and error cycles**, not linear progression. They copy working examples, modify one element, observe what breaks, debug the problem, and iterate. This pattern repeats until intuition develops.
+
+Your documentation should embrace this reality. Start with working examples that readers can modify immediately. Show what happens when things go wrong. Make experimentation feel productive rather than frustrating.
+
+**Pattern Recognition in Learning**
+
+You can facilitate pattern matching by explicitly connecting new concepts to familiar ones. When explaining closures to someone familiar with classes:
+
+> Think of a closure as a function that carries data with it, similar to how an object bundles methods with instance variables. The key difference is that closures capture this data from their surrounding scope.
+
+### Working Memory and Cognitive Load
+
+[George Miller's research](https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two) established that working memory can handle about 7±2 pieces of information simultaneously. Address this through **chunking**:
+
+```javascript
+// Instead of overwhelming with eight separate parameters
+function processUserData(firstName, lastName, email, phoneNumber,
+                        street, city, state, zipCode)
+
+// Group related concepts to reduce cognitive load
+function processUserData(personalInfo, contactInfo, addressInfo)
+```
+
+[John Sweller's Cognitive Load Theory](https://link.springer.com/book/10.1007/978-1-4419-8126-4) distinguishes between inherent complexity (intrinsic load) and presentation issues (extraneous load). Effective documentation minimizes extraneous load by:
+
+- **Providing complete, runnable examples** with setup clearly separated from core concepts
+- **Maintaining consistent abstraction levels** within sections
+- **Using progressive disclosure** to present the minimum needed for immediate understanding
+- **Avoiding split attention** by keeping related code and explanations visually close
+
+### Multi-Modal Integration
+
+The most effective documentation integrates multiple modalities seamlessly:
+
+```javascript
+function calculateTotal(items) {
+    let subtotal = items.reduce((sum, item) => sum + item.price, 0)  // Input processing
+    let tax = subtotal * TAX_RATE                                    // Calculation
+    return subtotal + tax                                            // Output
+}
+```
+
+- Narrative explanation establishing context and motivation
+- Visual structure showing system relationships
+- Concrete code examples readers can run and modify
+- Exercises helping readers apply concepts to real work
+
+### Building Mental Models
+
+When explaining asynchronous programming to someone familiar with cooking:
+
+> When cooking a complex meal, you don't prepare each dish sequentially. You start rice (20 minutes), begin chopping vegetables (5 minutes), then start sauce (10 minutes), timing everything to finish together.
+
+Address mental model mismatches explicitly by stating what a concept is **not** as well as what it is:
+
+> Unlike traditional database transactions, immutable ledger entries cannot be rolled back or edited once confirmed. To reverse an effect, you must append a compensating transaction.
+
+### Learning Journey Mapping
+
+Map the reader journey across five distinct stages:
+
+1. **Discovery Phase**: What brought the reader here and what problem are they trying to solve?
+2. **Orientation Phase**: How quickly can they assess whether this tool or library fits?
+3. **Active Learning Phase**: What small, verifiable wins build momentum?
+4. **Application Phase**: How do they bridge toy examples to production code?
+5. **Mastery Phase**: Where do they find concise reference signatures when returning months later?

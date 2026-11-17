@@ -1,0 +1,19 @@
+---
+title: "Mental Models Outlast Frameworks"
+description: "Libraries turn over every three years; queues, state transitions, and failure boundaries remain constant for decades."
+theme: "Systems Architecture"
+publishedAt: "2026-10-14"
+order: 3
+---
+
+Spend a decade building software and you will watch dozens of frameworks rise, dominate conference talks, and quietly fade. What endures across every generation of tooling are the underlying mental models: how data moves, where contention forms, and how humans coordinate around complexity.
+
+### Three Questions That Outlive Syntax
+
+Whenever adopting a new library or platform, ask:
+
+1. **Where do queues form when demand doubles?** Unbounded buffers hide trouble until latency explodes.
+2. **What happens on partial failure?** Knowing what succeeds and what rolls back matters more than happy-path throughput.
+3. **Who owns the failure mode at 3 a.m.?** Observability is part of architecture, not an afterthought added before launch.
+
+Teaching these principles through durable books helps builders transfer insight across languages rather than relearning basics with every syntax shift.

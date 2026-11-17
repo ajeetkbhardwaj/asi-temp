@@ -1,82 +1,51 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 @import "highlight.js/styles/github-dark.css";
 
-@custom-variant dark (&:is(.dark *));
-
-/* Georgia for body text, system font for UI */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Warmer, more human colors */
-  --card: #fefefe;
-  --card-foreground: #1a1a1a;
-  --popover: #fefefe;
-  --popover-foreground: #1a1a1a;
-  --primary: #333333;
-  --primary-foreground: #fefefe;
-  --secondary: #f7f5f2;
-  --secondary-foreground: #333333;
-  --muted: #f9f7f5;
-  --muted-foreground: #6b6b6b;
-  --accent: #e8e4df;
-  --accent-foreground: #333333;
-  --destructive: #d93025;
-  --destructive-foreground: #fefefe;
-  --border: #e5e5e5;
-  --input: #e5e5e5;
-  --ring: #999999;
-  --chart-1: #8b7355;
-  --chart-2: #5d8aa8;
-  --chart-3: #7d8471;
-  --chart-4: #c19a6b;
-  --chart-5: #a67b5b;
-  --radius: 0.125rem;
-  --sidebar: #fafaf8;
-  --sidebar-foreground: #1a1a1a;
-  --sidebar-primary: #333333;
-  --sidebar-primary-foreground: #fefefe;
-  --sidebar-accent: #f7f5f2;
-  --sidebar-accent-foreground: #333333;
-  --sidebar-border: #e5e5e5;
-  --sidebar-ring: #999999;
-  --background: #fefefe;
-  --foreground: #1a1a1a;
+  --background: #ffffff;
+  --foreground: #141517;
+  --card: #f8f8f6;
+  --card-foreground: #141517;
+  --popover: #ffffff;
+  --popover-foreground: #141517;
+  --primary: #1b4332;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f1ed;
+  --secondary-foreground: #141517;
+  --muted: #f4f3ef;
+  --muted-foreground: #5c5f66;
+  --accent: #eceae4;
+  --accent-foreground: #141517;
+  --destructive: #c92a2a;
+  --destructive-foreground: #ffffff;
+  --border: #e4e2dc;
+  --input: #e4e2dc;
+  --ring: #1b4332;
+  --radius: 0.25rem;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #e5e5e5;
-  --card: #141414;
-  --card-foreground: #e5e5e5;
-  --popover: #141414;
-  --popover-foreground: #e5e5e5;
-  --primary: #d5d5d5;
-  --primary-foreground: #0a0a0a;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #e5e5e5;
-  --muted: #1a1a1a;
-  --muted-foreground: #999999;
-  --accent: #1a1a1a;
-  --accent-foreground: #e5e5e5;
-  --destructive: #ff6b6b;
-  --destructive-foreground: #0a0a0a;
-  --border: #2a2a2a;
-  --input: #2a2a2a;
-  --ring: #4a4a4a;
-  --chart-1: #8b7355;
-  --chart-2: #5d8aa8;
-  --chart-3: #7d8471;
-  --chart-4: #c19a6b;
-  --chart-5: #a67b5b;
-  --sidebar: #0f0f0f;
-  --sidebar-foreground: #e5e5e5;
-  --sidebar-primary: #d5d5d5;
-  --sidebar-primary-foreground: #0a0a0a;
-  --sidebar-accent: #1a1a1a;
-  --sidebar-accent-foreground: #e5e5e5;
-  --sidebar-border: #2a2a2a;
-  --sidebar-ring: #4a4a4a;
+  --background: #0d0e11;
+  --foreground: #eceef2;
+  --card: #15171c;
+  --card-foreground: #eceef2;
+  --popover: #15171c;
+  --popover-foreground: #eceef2;
+  --primary: #34a873;
+  --primary-foreground: #09140f;
+  --secondary: #1c1f26;
+  --secondary-foreground: #eceef2;
+  --muted: #181a20;
+  --muted-foreground: #9ca3af;
+  --accent: #22252d;
+  --accent-foreground: #eceef2;
+  --destructive: #f06565;
+  --destructive-foreground: #0d0e11;
+  --border: #262932;
+  --input: #262932;
+  --ring: #34a873;
 }
 
 @theme inline {
@@ -99,153 +68,99 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), Georgia, Cambria, serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Crimson Text', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.7;
-    letter-spacing: -0.01em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply bg-background text-foreground font-sans antialiased;
   }
-  
-  /* UI elements use system fonts */
-  button, input, select, textarea, .ui-font {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    letter-spacing: -0.02em;
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
   }
-  
-  /* Headings with more personality */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
+}
+
+.prose-reader {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--foreground);
+}
+
+.prose-reader h1,
+.prose-reader h2,
+.prose-reader h3,
+.prose-reader h4 {
+  font-family: var(--font-serif), Georgia, serif;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+.prose-reader p {
+  margin-bottom: 1.4rem;
+}
+
+.prose-reader blockquote {
+  font-style: italic;
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+  color: var(--muted-foreground);
+}
+
+.prose-reader pre {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  background: #14161a;
+  color: #e5e7eb;
+}
+
+.prose-reader code {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.prose-reader :not(pre) > code {
+  background: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.2rem;
+  font-size: 0.85em;
+}
+
+@media print {
+  header,
+  nav,
+  aside,
+  .no-print {
+    display: none !important;
   }
-  
-  h1 {
-    font-size: 2.25rem;
-    font-weight: 400;
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
   }
-  
-  h2 {
-    font-size: 1.875rem;
-    font-weight: 400;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-top: 2.5rem;
-    margin-bottom: 1.25rem;
-  }
-  
-  /* More readable prose */
-  .prose {
-    font-size: 18px;
-    line-height: 1.8;
-    max-width: 65ch;
-  }
-  
-  .prose p {
-    margin-bottom: 1.5rem;
-    color: var(--foreground);
-    opacity: 0.9;
-  }
-  
-  .prose strong {
-    font-weight: 600;
-    color: var(--foreground);
-  }
-  
-  .prose a {
-    color: var(--foreground);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-    text-decoration-color: var(--muted-foreground);
-    transition: text-decoration-color 0.2s ease;
-  }
-  
-  .prose a:hover {
-    text-decoration-color: var(--foreground);
-  }
-  
-  /* Softer code blocks */
-  .prose pre {
-    background: var(--muted);
-    border-radius: 0;
-    border: none;
-    padding: 1.5rem;
-    overflow-x: auto;
-    font-size: 0.875rem;
-    line-height: 1.6;
-    margin: 2rem 0;
-  }
-  
-  .prose code {
-    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
-    background: var(--accent);
-    padding: 0.125rem 0.375rem;
-    border-radius: 2px;
-    font-size: 0.875em;
-  }
-  
-  /* Blockquotes with style */
-  .prose blockquote {
-    font-style: italic;
-    border-left: 3px solid var(--border);
-    padding-left: 1.5rem;
-    margin: 2rem 0;
-    color: var(--muted-foreground);
-  }
-  
-  /* Lists with better spacing */
-  .prose ul, .prose ol {
-    margin: 1.5rem 0;
-    padding-left: 1.5rem;
-  }
-  
-  .prose li {
-    margin: 0.5rem 0;
-  }
-  
-  /* Remove aggressive rounded corners */
-  button, input, textarea, select, .card, .rounded-lg {
-    border-radius: var(--radius) !important;
-  }
-  
-  /* Softer shadows */
-  .shadow-sm {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  }
-  
-  .shadow-md {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  .prose-reader {
+    max-width: 100% !important;
+    font-size: 11pt !important;
+    line-height: 1.65 !important;
   }
 }

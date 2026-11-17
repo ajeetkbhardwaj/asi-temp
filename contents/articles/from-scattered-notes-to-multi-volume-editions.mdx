@@ -1,0 +1,25 @@
+---
+title: "From Scattered Notes to Multi-Volume Editions"
+description: "How we structure books at Kumar Press so volumes, parts, and chapters stay unified in one repository."
+theme: "Publishing"
+publishedAt: "2026-09-30"
+order: 4
+---
+
+Traditional publishing separates writing, editing, and web presentation into disconnected tools. By the time a book ships, edits made to the manuscript fall out of sync with the published reader.
+
+### One Source of Truth
+
+At Kumar Press, every volume lives in plain files organized by book, volume, and part:
+
+```text
+contents/
+  book-1/
+    vol-1/
+      part-1/
+        chapter-1.mdx
+  articles/
+    essay.mdx
+```
+
+From that single manuscript tree, the web reader renders clean typography, automatic tables of contents, and cross-chapter navigation directly on demand.

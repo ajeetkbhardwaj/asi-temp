@@ -1,0 +1,14 @@
+---
+title: "Structured Events Over Unstructured Logs"
+description: "Emit wide, queryable event records tied to request IDs instead of scattered text lines."
+order: 1
+---
+
+Plain text log lines tell you what a single function thought happened; wide structured events tell you what a request actually experienced across every boundary.
+
+### Key Fields on Every Request Event
+
+- `requestId` and `traceId` for end-to-end correlation
+- `route`, `statusCode`, and `durationMs` for latency percentiles
+- `dependencyCalls` count and downstream timeout flags
+- `errorCode` using stable, searchable identifiers

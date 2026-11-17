@@ -1,0 +1,14 @@
+{
+  "title": "The Architecture of Technical Clarity",
+  "subtitle": "Practical Patterns for Writing Documentation That Teaches, Scales, and Endures",
+  "description": "A multi-volume guide to transforming complex engineering knowledge into clear, structured, human-centered technical books and documentation.",
+  "author": "Ajeet Kumar",
+  "category": "Technical Craft",
+  "themes": ["Technical Writing", "Information Architecture", "Cognitive Science", "Docs-as-Code"],
+  "edition": "First Digital & Print Edition",
+  "publishedYear": "2026",
+  "coverImage": "/images/book_cover_technical_clarity.jpg",
+  "priceLabel": "Open Digital Edition",
+  "featured": true,
+  "order": 1
+}

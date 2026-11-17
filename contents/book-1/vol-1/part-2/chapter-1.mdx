@@ -1,0 +1,26 @@
+---
+title: "From Confusion to Clarity"
+description: "Transform technical jargon into plain, exact language without sacrificing engineering precision."
+order: 1
+---
+
+Clarity is not simplification at the expense of truth. Clarity is removing every word that stands between the reader and the actual mechanism.
+
+### The Three Enemies of Clear Technical Prose
+
+1. **Nominalizations**: Turning crisp verbs into heavy nouns ("perform an initialization of" instead of "initialize").
+2. **Unanchored Pronouns**: Starting a sentence with "This enables..." when the preceding paragraph named three different components.
+3. **Hidden Prerequisites**: Referring to a configuration flag before telling the reader where that configuration lives.
+
+### Sentence-Level Revision Checklist
+
+Compare before and after revision:
+
+- **Before**: "In the event that the connection pool experiences exhaustion, a timeout exception will be thrown by the client."
+- **After**: "When all pooled connections are busy past the timeout window, the client throws a `PoolTimeoutError`."
+
+Notice how the revised sentence preserves full technical precision while cutting word count by 40% and naming the concrete error class.
+
+### Precision Over Politeness
+
+Avoid filler lead-ins such as "It is important to note that..." or "Simply run the command below." If a step matters, state the consequence directly. If a step is genuinely delicate, tell the reader why instead of calling it simple.

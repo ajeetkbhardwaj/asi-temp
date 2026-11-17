@@ -1,0 +1,6 @@
+{
+  "number": 1,
+  "title": "Latency, Queues, and Backpressure",
+  "description": "Understand why queues grow nonlinearly near saturation and how explicit backpressure protects downstream services.",
+  "order": 1
+}

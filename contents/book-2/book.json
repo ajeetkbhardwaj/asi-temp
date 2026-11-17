@@ -1,0 +1,14 @@
+{
+  "title": "Systems Thinking for Builders",
+  "subtitle": "Mental Models for Distributed Architecture, Resilience, and Observability",
+  "description": "An engineering field book on reasoning about queues, backpressure, partial failure, and observable production systems.",
+  "author": "Ajeet Kumar",
+  "category": "Systems Architecture",
+  "themes": ["Distributed Systems", "Resilience", "Observability", "Engineering Judgment"],
+  "edition": "First Digital & Print Edition",
+  "publishedYear": "2026",
+  "coverImage": "/images/book_cover_systems_builders.jpg",
+  "priceLabel": "Open Digital Edition",
+  "featured": true,
+  "order": 2
+}

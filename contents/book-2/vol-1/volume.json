@@ -1,0 +1,7 @@
+{
+  "number": 1,
+  "title": "Volume I: Foundations of Resilient Systems",
+  "subtitle": "Queues, Boundaries, and Failure Modes",
+  "description": "Core physical constraints of distributed software and practical patterns for containing blast radius.",
+  "order": 1
+}

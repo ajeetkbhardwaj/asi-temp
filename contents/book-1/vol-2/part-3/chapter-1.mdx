@@ -1,0 +1,26 @@
+---
+title: "API Documentation Excellence"
+description: "Design endpoint references, quickstarts, and error guides that developers trust in production."
+order: 1
+---
+
+An API reference fails when it lists field types without explaining relationships, lifecycle transitions, or failure recovery.
+
+### Every Endpoint Needs Four Elements
+
+1. **Intent**: One sentence describing when and why to call the endpoint.
+2. **Contract**: Required headers, path/query parameters, and request schema.
+3. **Concrete Request & Response**: Copy-pasteable `curl` or SDK call with realistic payloads.
+4. **Failure Modes**: Exact status codes, idempotency rules, and remediation steps.
+
+```json
+{
+  "error": {
+    "code": "RATE_LIMIT_EXCEEDED",
+    "retryAfterSeconds": 12,
+    "message": "Too many export requests; retry after the backoff window."
+  }
+}
+```
+
+Documenting error contracts as rigorously as happy paths cuts integration support tickets dramatically.

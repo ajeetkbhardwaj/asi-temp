@@ -1,0 +1,6 @@
+{
+  "number": 2,
+  "title": "Observability as a Design Discipline",
+  "description": "Structure logs, traces, and saturation metrics so unknown failure modes become diagnosable in minutes.",
+  "order": 2
+}
